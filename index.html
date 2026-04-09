@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashton Xavier — Portfolio</title>
+  <title>Ashton Xavier  — Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,49 +12,53 @@
   <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/src/index.js" defer></script>
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    THEME FLICKER PREVENTION:
+    Apply saved theme immediately before the page renders,
+    so there's no flash of the wrong color.
+  -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      // If nothing saved, HTML default above ("light") stands.
+    })();
+  </script>
 </head>
 <body>
 
   <!-- ============================================================
-       INTRO SCREEN — Full-screen cinematic landing
-       Sits on top of everything, animates out after ~3.8s
+       INTRO SCREEN
   ============================================================ -->
   <div class="intro-screen" id="introScreen" aria-hidden="true">
 
-    <!-- Animated corner lines -->
     <div class="intro-corner intro-corner--tl"></div>
     <div class="intro-corner intro-corner--tr"></div>
     <div class="intro-corner intro-corner--bl"></div>
     <div class="intro-corner intro-corner--br"></div>
 
-    <!-- Scanning horizontal line -->
     <div class="intro-scanline"></div>
 
-    <!-- Center content -->
     <div class="intro-content">
-
-      <!-- Small label above -->
       <p class="intro-label" id="introLabel">— Portfolio</p>
 
-      <!-- Main welcome line -->
       <h1 class="intro-heading">
         <span class="intro-word" id="introWord1">Welcome</span>
         <span class="intro-word intro-word--italic" id="introWord2">to my</span>
         <span class="intro-word" id="introWord3">page.</span>
       </h1>
 
-      <!-- Sub-tagline typed in -->
       <p class="intro-sub" id="introSub"></p>
 
-      <!-- Progress bar -->
       <div class="intro-progress-wrap">
         <div class="intro-progress-bar" id="introProgressBar"></div>
       </div>
       <p class="intro-progress-label" id="introProgressLabel">Loading</p>
-
     </div>
 
-    <!-- Bottom strip: name -->
     <div class="intro-footer">
       <span class="intro-footer-name">Ashton Xavier E. Maitim</span>
       <span class="intro-footer-divider">|</span>
@@ -63,15 +67,16 @@
 
   </div>
 
+
   <!-- ============================================================
-       MAIN PORTFOLIO (hidden during intro, revealed after)
+       SITE WRAPPER
   ============================================================ -->
   <div class="site-wrapper" id="siteWrapper">
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <div class="nav-inner">
-        <a href="#hero" class="nav-logo">AX</a>
+        <a href="#hero" class="nav-logo">AXM</a>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -81,9 +86,9 @@
         </ul>
         <div class="nav-actions">
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <i class="ph ph-moon" id="themeIcon"></i>
+            <i class="ph ph-sun" id="themeIcon"></i>
           </button>
-          <a href="#" class="nav-resume-btn" target="_blank">Resume ↗</a>
+          <a href="https://drive.google.com/file/d/1Ssz0JPaH2rk9B28_rAFNHAOTgCNcypxc/view?usp=sharing" class="nav-resume-btn" target="_blank">Resume ↗</a>
         </div>
       </div>
     </nav>
@@ -277,40 +282,58 @@
         </div>
         <div class="certs-grid">
 
-          <div class="cert-card reveal">
-            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
-            <div class="cert-info">
-              <span class="cert-issuer">Issuer Name</span>
-              <h3 class="cert-title">Certificate Title Here</h3>
-              <span class="cert-date">Month Year</span>
-            </div>
-            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
-              <i class="ph ph-arrow-square-out"></i>
+          <!-- ✅ REAL CERTIFICATE — Saylor Academy -->
+          <div class="cert-card cert-card--image reveal">
+            <a href="https://drive.google.com/file/d/1Kq89QsYDZ0vK1q9LvxJ28cthyWPnn3Ph/view"
+               target="_blank"
+               rel="noopener"
+               class="cert-image-link"
+               title="View Certificate">
+              <img
+                src="https://drive.google.com/thumbnail?id=1Kq89QsYDZ0vK1q9LvxJ28cthyWPnn3Ph&sz=w800"
+                alt="Software Engineering Certificate – Saylor Academy"
+                class="cert-preview-img"
+              />
+              <div class="cert-overlay">
+                <i class="ph ph-arrow-square-out"></i>
+                <span>View Certificate</span>
+              </div>
             </a>
+            <div class="cert-card-body">
+              <span class="cert-issuer">Saylor Academy</span>
+              <h3 class="cert-title">Software Engineering Certificate</h3>
+              <span class="cert-date">2026</span>
+            </div>
           </div>
 
-          <div class="cert-card reveal">
-            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
-            <div class="cert-info">
+          <!-- Placeholder cert 2 — replace when you have more -->
+          <div class="cert-card cert-card--image reveal">
+            <a href="#" class="cert-image-link cert-image-link--empty" title="Coming soon">
+              <div class="cert-img-empty">
+                <i class="ph-fill ph-certificate"></i>
+                <span>Coming Soon</span>
+              </div>
+            </a>
+            <div class="cert-card-body">
               <span class="cert-issuer">Issuer Name</span>
               <h3 class="cert-title">Certificate Title Here</h3>
               <span class="cert-date">Month Year</span>
             </div>
-            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
-              <i class="ph ph-arrow-square-out"></i>
-            </a>
           </div>
 
-          <div class="cert-card reveal">
-            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
-            <div class="cert-info">
+          <!-- Placeholder cert 3 -->
+          <div class="cert-card cert-card--image reveal">
+            <a href="#" class="cert-image-link cert-image-link--empty" title="Coming soon">
+              <div class="cert-img-empty">
+                <i class="ph-fill ph-certificate"></i>
+                <span>Coming Soon</span>
+              </div>
+            </a>
+            <div class="cert-card-body">
               <span class="cert-issuer">Issuer Name</span>
               <h3 class="cert-title">Certificate Title Here</h3>
               <span class="cert-date">Month Year</span>
             </div>
-            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
-              <i class="ph ph-arrow-square-out"></i>
-            </a>
           </div>
 
         </div>
@@ -337,7 +360,7 @@
           <a href="tel:+63929xxxxxxx" class="contact-card">
             <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
             <span class="contact-card-label">Phone</span>
-            <span class="contact-card-value">0929-xxx-xxxx</span>
+            <span class="contact-card-value">0929-668-3164</span>
             <span class="contact-card-hint">Click to call <i class="ph ph-arrow-right"></i></span>
           </a>
 
@@ -364,32 +387,50 @@
 
 
   <!-- ============================================================
-       JAVASCRIPT
+       SCRIPTS
   ============================================================ -->
   <script>
-  /* ── THEME ── */
+  /* ─────────────────────────────────────────────
+     THEME — default is LIGHT, persists via localStorage
+     The inline <script> in <head> already applied the
+     saved theme before render (no flash). Here we just
+     wire up the toggle button and keep the icon in sync.
+  ───────────────────────────────────────────── */
   const html        = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon   = document.getElementById('themeIcon');
 
-  const saved = localStorage.getItem('theme') || 'dark';
-  html.setAttribute('data-theme', saved);
-  themeIcon.className = saved === 'dark' ? 'ph ph-moon' : 'ph ph-sun';
+  // Sync icon to whatever theme is currently active
+  function syncIcon(theme) {
+    // Light mode  → show moon icon (click to go dark)
+    // Dark mode   → show sun  icon (click to go light)
+    themeIcon.className = theme === 'light' ? 'ph ph-moon' : 'ph ph-sun';
+  }
+
+  // Apply on load
+  syncIcon(html.getAttribute('data-theme'));
 
   themeToggle.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const current = html.getAttribute('data-theme');
+    const next    = current === 'light' ? 'dark' : 'light';
     html.setAttribute('data-theme', next);
-    themeIcon.className = next === 'dark' ? 'ph ph-moon' : 'ph ph-sun';
-    localStorage.setItem('theme', next);
+    localStorage.setItem('theme', next);   // remember for next visit
+    syncIcon(next);
   });
 
-  /* ── NAVBAR SCROLL ── */
+
+  /* ─────────────────────────────────────────────
+     NAVBAR SCROLL
+  ───────────────────────────────────────────── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  /* ── SCROLL REVEAL ── */
+
+  /* ─────────────────────────────────────────────
+     SCROLL REVEAL
+  ───────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -397,30 +438,37 @@
   revealEls.forEach(el => revealObserver.observe(el));
 
 
-  /* ══════════════════════════════════════════════════════════════
+  /* ─────────────────────────────────────────────
      INTRO SCREEN SEQUENCE
-     Timeline:
-       0.0s  — screen visible, corners draw in
-       0.4s  — label fades in
-       0.8s  — words stagger in (slide up)
-       1.6s  — sub-text types in character by character
-       2.6s  — progress bar fills over 0.8s → reads "Ready"
-       3.4s  — brief pause
-       3.8s  — curtain wipe UP exits the intro screen
-       4.2s  — site-wrapper fades in
-  ══════════════════════════════════════════════════════════════ */
+     The intro always uses its own dark look
+     (independent of the user's theme preference),
+     then exits to reveal the portfolio in whatever
+     theme the user last had set.
 
-  const introScreen    = document.getElementById('introScreen');
-  const introLabel     = document.getElementById('introLabel');
-  const introWord1     = document.getElementById('introWord1');
-  const introWord2     = document.getElementById('introWord2');
-  const introWord3     = document.getElementById('introWord3');
-  const introSub       = document.getElementById('introSub');
-  const progressBar    = document.getElementById('introProgressBar');
-  const progressLabel  = document.getElementById('introProgressLabel');
-  const siteWrapper    = document.getElementById('siteWrapper');
+     Timeline:
+       0.0s  corners draw in
+       0.4s  label fades in
+       0.8s  words stagger in
+       1.7s  sub-text types in
+       2.6s  progress bar fills
+       3.3s  label → "Ready"
+       3.55s screen wipes up
+       4.15s site fades in, scroll unlocked
+  ───────────────────────────────────────────── */
+  const introScreen   = document.getElementById('introScreen');
+  const introLabel    = document.getElementById('introLabel');
+  const introWord1    = document.getElementById('introWord1');
+  const introWord2    = document.getElementById('introWord2');
+  const introWord3    = document.getElementById('introWord3');
+  const introSub      = document.getElementById('introSub');
+  const progressBar   = document.getElementById('introProgressBar');
+  const progressLabel = document.getElementById('introProgressLabel');
+  const siteWrapper   = document.getElementById('siteWrapper');
 
   const subText = "Ashton Xavier · BSIT · NU Manila";
+
+  // Lock scroll during intro
+  document.body.classList.add('intro-active');
 
   function typeText(el, text, speed, cb) {
     let i = 0;
@@ -432,42 +480,36 @@
   }
 
   function runIntro() {
-    // Step 1 — label appears
-    setTimeout(() => {
-      introLabel.classList.add('intro-label--visible');
-    }, 400);
-
-    // Step 2 — words slide in, staggered
-    setTimeout(() => { introWord1.classList.add('intro-word--visible'); }, 800);
+    setTimeout(() => { introLabel.classList.add('intro-label--visible'); }, 400);
+    setTimeout(() => { introWord1.classList.add('intro-word--visible'); },  800);
     setTimeout(() => { introWord2.classList.add('intro-word--visible'); }, 1050);
     setTimeout(() => { introWord3.classList.add('intro-word--visible'); }, 1280);
 
-    // Step 3 — sub-text types in
     setTimeout(() => {
       introSub.classList.add('intro-sub--visible');
       typeText(introSub, subText, 38, () => {
-        // Step 4 — progress bar fills
         setTimeout(() => {
           progressBar.classList.add('intro-progress-bar--fill');
-          // Label updates mid-fill
-          setTimeout(() => { progressLabel.textContent = 'Ready'; }, 700);
+          setTimeout(() => {
+            progressLabel.textContent = 'Ready';
+          }, 700);
         }, 200);
       });
     }, 1700);
 
-    // Step 5 — exit: wipe UP
+    // Wipe up exit
     setTimeout(() => {
       introScreen.classList.add('intro-screen--exit');
     }, 3550);
 
-    // Step 6 — reveal site underneath
+    // Reveal site + unlock scroll
     setTimeout(() => {
       siteWrapper.classList.add('site-wrapper--visible');
+      document.body.classList.remove('intro-active');
       introScreen.style.display = 'none';
     }, 4150);
   }
 
-  // Kick off after fonts/icons load (small safety delay)
   window.addEventListener('DOMContentLoaded', () => {
     setTimeout(runIntro, 120);
   });
