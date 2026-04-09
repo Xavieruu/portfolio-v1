@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashton Xavier — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       INTRO SCREEN — Full-screen cinematic landing
+       Sits on top of everything, animates out after ~3.8s
+  ============================================================ -->
+  <div class="intro-screen" id="introScreen" aria-hidden="true">
+
+    <!-- Animated corner lines -->
+    <div class="intro-corner intro-corner--tl"></div>
+    <div class="intro-corner intro-corner--tr"></div>
+    <div class="intro-corner intro-corner--bl"></div>
+    <div class="intro-corner intro-corner--br"></div>
+
+    <!-- Scanning horizontal line -->
+    <div class="intro-scanline"></div>
+
+    <!-- Center content -->
+    <div class="intro-content">
+
+      <!-- Small label above -->
+      <p class="intro-label" id="introLabel">— Portfolio</p>
+
+      <!-- Main welcome line -->
+      <h1 class="intro-heading">
+        <span class="intro-word" id="introWord1">Welcome</span>
+        <span class="intro-word intro-word--italic" id="introWord2">to my</span>
+        <span class="intro-word" id="introWord3">page.</span>
+      </h1>
+
+      <!-- Sub-tagline typed in -->
+      <p class="intro-sub" id="introSub"></p>
+
+      <!-- Progress bar -->
+      <div class="intro-progress-wrap">
+        <div class="intro-progress-bar" id="introProgressBar"></div>
+      </div>
+      <p class="intro-progress-label" id="introProgressLabel">Loading</p>
+
+    </div>
+
+    <!-- Bottom strip: name -->
+    <div class="intro-footer">
+      <span class="intro-footer-name">Ashton Xavier E. Maitim</span>
+      <span class="intro-footer-divider">|</span>
+      <span class="intro-footer-role">BSIT · NU Manila</span>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       MAIN PORTFOLIO (hidden during intro, revealed after)
+  ============================================================ -->
+  <div class="site-wrapper" id="siteWrapper">
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">AX</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="ph ph-moon" id="themeIcon"></i>
+          </button>
+          <a href="#" class="nav-resume-btn" target="_blank">Resume ↗</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">— Portfolio</p>
+        <h1 class="hero-name">Ashton<br><em>Xavier</em></h1>
+        <p class="hero-role">BSIT Student &amp; Aspiring Developer</p>
+        <p class="hero-tagline">Crafting clean code and thoughtful interfaces.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#about" class="btn-ghost">About Me</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">scroll</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <p class="section-label">01 — About</p>
+          <h2 class="section-heading">A little about<br><em>who I am</em></h2>
+          <p class="about-body">
+            I'm Ashton Xavier, a BSIT (Mobile &amp; Web Applications) student at NU Manila.
+            I'm drawn to the intersection of clean design and functional code — building things
+            that are both useful and considered.
+          </p>
+          <p class="about-body">
+            Currently in my second year, I'm learning fast — from databases and Java to
+            Android development and front-end design. Every project I take on is a chance
+            to understand something deeper.
+          </p>
+        </div>
+        <div class="about-accent reveal">
+          <div class="accent-box">
+            <span class="accent-number">02</span>
+            <span class="accent-label">Years<br>Studying</span>
+          </div>
+          <div class="accent-box">
+            <span class="accent-number">4+</span>
+            <span class="accent-label">Projects<br>Built</span>
+          </div>
+          <div class="accent-quote">"Learning to build,<br>building to learn."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">02 — Skills</p>
+          <h2 class="section-heading">What I work with</h2>
+        </div>
+        <div class="skills-grid reveal">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Tools &amp; Platforms</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Android Studio</span>
+              <span class="skill-tag">NetBeans</span>
+              <span class="skill-tag">Apache Derby</span>
+              <span class="skill-tag">MS SQL Server</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title">Currently Learning</h3>
+            <div class="skill-tags">
+              <span class="skill-tag soon">JavaScript</span>
+              <span class="skill-tag soon">UI/UX Design</span>
+              <span class="skill-tag soon">REST APIs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">03 — Projects</p>
+          <h2 class="section-heading">Things I've built</h2>
+        </div>
+        <div class="projects-grid">
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-tag">Android</span>
+                <span class="project-tag">Java</span>
+                <span class="project-tag">SQLite</span>
+              </div>
+              <h3 class="project-title">Himaware</h3>
+              <p class="project-desc">
+                A mental wellness Android application built collaboratively. Features a bottom
+                navigation bar, user onboarding, session management, and a local SQLite database
+                for storing user data.
+              </p>
+              <div class="project-footer">
+                <span class="project-type">Group Project</span>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-tag">Java Swing</span>
+                <span class="project-tag">Apache Derby</span>
+              </div>
+              <h3 class="project-title">Book Database App</h3>
+              <p class="project-desc">
+                A desktop CRUD application for managing a book library. Built with Java Swing
+                and NetBeans, backed by an Apache Derby database with full create, read,
+                update, and delete functionality.
+              </p>
+              <div class="project-footer">
+                <span class="project-type">Solo Project</span>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-tag">HTML/CSS/JS</span>
+                <span class="project-tag">Chart.js</span>
+              </div>
+              <h3 class="project-title">Z-Score Analysis Tool</h3>
+              <p class="project-desc">
+                A browser-based statistical analysis tool converted from a Python/Colab
+                script. Allows users to visualize Z-score distributions with interactive
+                charts — no installation needed.
+              </p>
+              <div class="project-footer">
+                <span class="project-type">Solo Project</span>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-meta">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+              </div>
+              <h3 class="project-title">Personal Portfolio</h3>
+              <p class="project-desc">
+                This website. A minimal personal portfolio with a cinematic intro screen,
+                dark/light mode, scroll animations, and an editorial typographic design system.
+              </p>
+              <div class="project-footer">
+                <span class="project-type">Solo Project</span>
+                <a href="#" class="project-link">View →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section certificates" id="certificates">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">04 — Certificates</p>
+          <h2 class="section-heading">Credentials &amp;<br><em>Recognition</em></h2>
+        </div>
+        <div class="certs-grid">
+
+          <div class="cert-card reveal">
+            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
+            <div class="cert-info">
+              <span class="cert-issuer">Issuer Name</span>
+              <h3 class="cert-title">Certificate Title Here</h3>
+              <span class="cert-date">Month Year</span>
+            </div>
+            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
+            <div class="cert-info">
+              <span class="cert-issuer">Issuer Name</span>
+              <h3 class="cert-title">Certificate Title Here</h3>
+              <span class="cert-date">Month Year</span>
+            </div>
+            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-icon-wrap"><i class="ph-fill ph-certificate"></i></div>
+            <div class="cert-info">
+              <span class="cert-issuer">Issuer Name</span>
+              <h3 class="cert-title">Certificate Title Here</h3>
+              <span class="cert-date">Month Year</span>
+            </div>
+            <a href="#" class="cert-view-btn" target="_blank" title="View Certificate">
+              <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="reveal contact-header">
+          <p class="section-label">05 — Contact</p>
+          <h2 class="section-heading contact-heading">Let's connect</h2>
+          <p class="contact-sub">Feel free to reach out — I'm always open to new opportunities and conversations.</p>
+        </div>
+        <div class="contact-cards reveal">
+
+          <a href="mailto:maitimashton@gmail.com" class="contact-card">
+            <div class="contact-card-icon"><i class="ph ph-envelope-simple"></i></div>
+            <span class="contact-card-label">Email</span>
+            <span class="contact-card-value">maitimashton@gmail.com</span>
+            <span class="contact-card-hint">Click to email <i class="ph ph-arrow-right"></i></span>
+          </a>
+
+          <a href="tel:+63929xxxxxxx" class="contact-card">
+            <div class="contact-card-icon"><i class="ph ph-phone"></i></div>
+            <span class="contact-card-label">Phone</span>
+            <span class="contact-card-value">0929-xxx-xxxx</span>
+            <span class="contact-card-hint">Click to call <i class="ph ph-arrow-right"></i></span>
+          </a>
+
+          <a href="https://github.com/Xavieruu" class="contact-card" target="_blank" rel="noopener">
+            <div class="contact-card-icon"><i class="ph ph-github-logo"></i></div>
+            <span class="contact-card-label">GitHub</span>
+            <span class="contact-card-value">github.com/Xavieruu</span>
+            <span class="contact-card-hint">View profile <i class="ph ph-arrow-right"></i></span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p class="footer-name">Ashton Xavier E. Maitim</p>
+        <p class="footer-copy">© 2025 — Built with HTML &amp; CSS</p>
+      </div>
+    </footer>
+
+  </div><!-- /site-wrapper -->
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+  /* ── THEME ── */
+  const html        = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon   = document.getElementById('themeIcon');
+
+  const saved = localStorage.getItem('theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+  themeIcon.className = saved === 'dark' ? 'ph ph-moon' : 'ph ph-sun';
+
+  themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    themeIcon.className = next === 'dark' ? 'ph ph-moon' : 'ph ph-sun';
+    localStorage.setItem('theme', next);
+  });
+
+  /* ── NAVBAR SCROLL ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* ── SCROLL REVEAL ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+
+  /* ══════════════════════════════════════════════════════════════
+     INTRO SCREEN SEQUENCE
+     Timeline:
+       0.0s  — screen visible, corners draw in
+       0.4s  — label fades in
+       0.8s  — words stagger in (slide up)
+       1.6s  — sub-text types in character by character
+       2.6s  — progress bar fills over 0.8s → reads "Ready"
+       3.4s  — brief pause
+       3.8s  — curtain wipe UP exits the intro screen
+       4.2s  — site-wrapper fades in
+  ══════════════════════════════════════════════════════════════ */
+
+  const introScreen    = document.getElementById('introScreen');
+  const introLabel     = document.getElementById('introLabel');
+  const introWord1     = document.getElementById('introWord1');
+  const introWord2     = document.getElementById('introWord2');
+  const introWord3     = document.getElementById('introWord3');
+  const introSub       = document.getElementById('introSub');
+  const progressBar    = document.getElementById('introProgressBar');
+  const progressLabel  = document.getElementById('introProgressLabel');
+  const siteWrapper    = document.getElementById('siteWrapper');
+
+  const subText = "Ashton Xavier · BSIT · NU Manila";
+
+  function typeText(el, text, speed, cb) {
+    let i = 0;
+    el.textContent = '';
+    const t = setInterval(() => {
+      el.textContent += text[i++];
+      if (i >= text.length) { clearInterval(t); if (cb) cb(); }
+    }, speed);
+  }
+
+  function runIntro() {
+    // Step 1 — label appears
+    setTimeout(() => {
+      introLabel.classList.add('intro-label--visible');
+    }, 400);
+
+    // Step 2 — words slide in, staggered
+    setTimeout(() => { introWord1.classList.add('intro-word--visible'); }, 800);
+    setTimeout(() => { introWord2.classList.add('intro-word--visible'); }, 1050);
+    setTimeout(() => { introWord3.classList.add('intro-word--visible'); }, 1280);
+
+    // Step 3 — sub-text types in
+    setTimeout(() => {
+      introSub.classList.add('intro-sub--visible');
+      typeText(introSub, subText, 38, () => {
+        // Step 4 — progress bar fills
+        setTimeout(() => {
+          progressBar.classList.add('intro-progress-bar--fill');
+          // Label updates mid-fill
+          setTimeout(() => { progressLabel.textContent = 'Ready'; }, 700);
+        }, 200);
+      });
+    }, 1700);
+
+    // Step 5 — exit: wipe UP
+    setTimeout(() => {
+      introScreen.classList.add('intro-screen--exit');
+    }, 3550);
+
+    // Step 6 — reveal site underneath
+    setTimeout(() => {
+      siteWrapper.classList.add('site-wrapper--visible');
+      introScreen.style.display = 'none';
+    }, 4150);
+  }
+
+  // Kick off after fonts/icons load (small safety delay)
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(runIntro, 120);
+  });
+  </script>
+
+</body>
+</html>
